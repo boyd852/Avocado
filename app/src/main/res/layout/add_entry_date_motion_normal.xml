@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_entry_date_motion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/motion_add_entry_date">
+
+    <ToggleButton
+        android:id="@+id/date_split_tb"
+        android:layout_width="40dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/toggle_selector"
+        android:textOff="Split"
+        android:textOn="One"
+        android:textSize="10dp"
+        app:layout_constraintTop_toBottomOf="@id/date_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/date_secondary_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:minEms="4"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/date_tv"
+        app:layout_constraintStart_toStartOf="@id/date_tv"
+        app:layout_constraintTop_toTopOf="@id/date_tv"
+        tools:text="01/01/18" />
+
+    <TextView
+        android:id="@+id/date_between_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/date_tv"
+        app:layout_constraintBottom_toBottomOf="@id/date_tv"
+        app:layout_constraintStart_toStartOf="@id/date_tv"/>
+
+    <TextView
+        android:id="@+id/date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#303030"
+        android:clickable="true"
+        android:focusable="true"
+        android:minEms="4"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="01/01/18" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

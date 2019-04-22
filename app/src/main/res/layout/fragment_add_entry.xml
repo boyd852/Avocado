@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.AddEntryFragment"
+    android:focusable="true"
+    android:id="@+id/add_entry_container">
+
+    <LinearLayout
+        android:id="@+id/linear_layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/guideline_upper"
+        app:layout_constraintEnd_toStartOf="@id/linear_layout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread">
+
+        <TextView
+            android:id="@+id/total_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Total:"/>
+
+        <TextView
+            android:id="@+id/total_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:hint="Total"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/linear_layout1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/linear_layout1"
+        app:layout_constraintTop_toTopOf="@id/linear_layout1">
+
+        <TextView
+            android:id="@+id/total_day_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="Day Total:" />
+
+        <TextView
+            android:id="@+id/dayTotal_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:hint="Day Total"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_upper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/spend_et"
+        app:layout_constraintGuide_percent="0.1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <ImageView
+        android:id="@+id/search_iv"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="Magnifying glass"
+        app:layout_constraintBottom_toBottomOf="@+id/currency_et"
+        app:layout_constraintEnd_toStartOf="@id/currency_et"
+        app:layout_constraintTop_toTopOf="@+id/currency_et"
+        app:srcCompat="@drawable/ic_search_white_24dp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/currency_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/transparent"
+        android:hint="AUD"
+        android:inputType="text|textCapCharacters"
+        android:maxLength="3"
+        android:textSize="36sp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintBottom_toBottomOf="@+id/spend_et"
+        app:layout_constraintEnd_toStartOf="@+id/spend_et"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spend_et" />
+
+    <EditText
+        android:id="@+id/spend_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/transparent"
+        android:hint="@string/spend_et_hint"
+        android:inputType="numberDecimal"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@id/add_entry_date_motion_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/currency_et"
+        app:layout_constraintTop_toBottomOf="@id/guideline_upper"/>
+
+    <FrameLayout
+        android:id="@+id/add_entry_date_motion_container"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        app:layout_constraintTop_toBottomOf="@id/spend_et"
+        app:layout_constraintBottom_toTopOf="@id/description_et">
+
+        <include layout="@layout/add_entry_date_motion_normal"/>
+
+    </FrameLayout>
+
+
+    <EditText
+        android:id="@+id/description_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="textCapSentences"
+        android:textSize="18sp"
+        android:layout_marginBottom="308dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_entry_date_motion_container" />
+
+    <Space
+        android:id="@+id/add_entry_space"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="@id/description_et"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:id="@+id/add_entry_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rectangle"
+        android:alpha="0"
+        android:visibility="gone"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"/>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/add_entry_fab_motion_layout"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        app:layoutDescription="@xml/motion_add_entry_fab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/add_entry_space">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/transport_category_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="mini"
+            app:layout_anchor="@id/pager"
+            app:layout_constraintBottom_toBottomOf="@id/add_entry_fab"
+            app:layout_constraintEnd_toEndOf="@id/add_entry_fab"
+            app:layout_constraintStart_toStartOf="@id/add_entry_fab"
+            app:layout_constraintTop_toTopOf="@id/add_entry_fab"
+            app:srcCompat="@drawable/ic_directions_bus_white_24dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/food_category_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="mini"
+            app:layout_anchor="@id/pager"
+            app:layout_constraintBottom_toBottomOf="@id/add_entry_fab"
+            app:layout_constraintEnd_toEndOf="@id/add_entry_fab"
+            app:layout_constraintStart_toStartOf="@id/add_entry_fab"
+            app:layout_constraintTop_toTopOf="@id/add_entry_fab"
+            app:srcCompat="@drawable/ic_restaurant_white_24dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/attraction_category_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="mini"
+            app:layout_anchor="@id/pager"
+            app:layout_constraintBottom_toBottomOf="@id/add_entry_fab"
+            app:layout_constraintEnd_toEndOf="@id/add_entry_fab"
+            app:layout_constraintStart_toStartOf="@id/add_entry_fab"
+            app:layout_constraintTop_toTopOf="@id/add_entry_fab"
+            app:srcCompat="@drawable/ic_local_activity_white_24dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/accom_category_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="mini"
+            app:layout_anchor="@id/pager"
+            app:layout_constraintBottom_toBottomOf="@id/add_entry_fab"
+            app:layout_constraintEnd_toEndOf="@id/add_entry_fab"
+            app:layout_constraintStart_toStartOf="@id/add_entry_fab"
+            app:layout_constraintTop_toTopOf="@id/add_entry_fab"
+            app:srcCompat="@drawable/ic_hotel_white_24dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/misc_category_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="mini"
+            app:layout_anchor="@id/pager"
+            app:layout_constraintBottom_toBottomOf="@id/add_entry_fab"
+            app:layout_constraintEnd_toEndOf="@id/add_entry_fab"
+            app:layout_constraintStart_toStartOf="@id/add_entry_fab"
+            app:layout_constraintTop_toTopOf="@id/add_entry_fab"
+            app:srcCompat="@drawable/ic_help_outline_white_24dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_entry_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@id/pager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_add_white_24dp" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

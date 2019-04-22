@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "572995031803",
+    "firebase_url": "https://avocado-2b227.firebaseio.com",
+    "project_id": "avocado-2b227",
+    "storage_bucket": "avocado-2b227.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572995031803:android:c1cf72f4988372ff",
+        "android_client_info": {
+          "package_name": "app.doscervezas.avocado"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572995031803-g89eu2me4fghmcbebr9u8mp52ht7ngqt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.doscervezas.avocado",
+            "certificate_hash": "811eec47463dbf4a9627ee22f3ce4648bc8373c3"
+          }
+        },
+        {
+          "client_id": "572995031803-rg7nir44huv5o1sd558dmrch0s2h8tr7.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "572995031803-rg7nir44huv5o1sd558dmrch0s2h8tr7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpPWcOc9k7yLSTagvDUaBa-DA38VQLbAk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572995031803-rg7nir44huv5o1sd558dmrch0s2h8tr7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

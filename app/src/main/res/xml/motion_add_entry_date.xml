@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <Transition
+        app:constraintSetStart="@layout/add_entry_date_motion_normal"
+        app:constraintSetEnd="@layout/add_entry_date_motion_expanded"
+        app:duration="400"
+        app:motionInterpolator="easeInOut">
+    </Transition>
+</MotionScene>

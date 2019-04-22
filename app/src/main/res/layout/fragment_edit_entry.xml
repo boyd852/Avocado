@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.EditEntryFragment">
+
+    <RadioGroup
+        android:id="@+id/edit_entry_category_rg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/edit_entry_spend_et"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        android:orientation="horizontal"
+        android:layout_marginTop="72dp">
+
+        <RadioButton
+            android:id="@+id/edit_entry_transport_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/category_selector"
+            android:button="@null"
+            android:drawableStart="@drawable/ic_directions_bus_white_24dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            />
+
+        <RadioButton
+            android:id="@+id/edit_entry_food_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/category_selector"
+            android:button="@null"
+            android:drawableStart="@drawable/ic_restaurant_white_24dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            />
+
+        <RadioButton
+            android:id="@+id/edit_entry_attraction_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/category_selector"
+            android:button="@null"
+            android:drawableStart="@drawable/ic_local_activity_white_24dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            />
+
+        <RadioButton
+            android:id="@+id/edit_entry_accom_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/category_selector"
+            android:button="@null"
+            android:drawableStart="@drawable/ic_hotel_white_24dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            />
+
+        <RadioButton
+            android:id="@+id/edit_entry_misc_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/category_selector"
+            android:button="@null"
+            android:drawableStart="@drawable/ic_help_outline_white_24dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/edit_entry_search_iv"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="Magnifying glass"
+        app:layout_constraintBottom_toBottomOf="@id/edit_entry_currency_et"
+        app:layout_constraintEnd_toStartOf="@id/edit_entry_currency_et"
+        app:layout_constraintTop_toTopOf="@id/edit_entry_currency_et"
+        app:srcCompat="@drawable/ic_search_white_24dp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/edit_entry_currency_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/transparent"
+        android:hint="AUD"
+        android:inputType="text|textCapCharacters"
+        android:maxLength="3"
+        android:textSize="36sp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintBottom_toBottomOf="@id/edit_entry_spend_et"
+        app:layout_constraintEnd_toStartOf="@id/edit_entry_spend_et"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/edit_entry_spend_et"/>
+
+    <EditText
+        android:id="@+id/edit_entry_spend_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/transparent"
+        android:hint="@string/spend_et_hint"
+        android:inputType="numberDecimal"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@id/edit_entry_date_motion_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/edit_entry_currency_et"
+        app:layout_constraintTop_toBottomOf="@id/edit_entry_category_rg"/>
+
+    <FrameLayout
+        android:id="@+id/edit_entry_date_motion_container"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        app:layout_constraintTop_toBottomOf="@id/edit_entry_spend_et"
+        app:layout_constraintBottom_toTopOf="@id/edit_entry_description_et">
+
+        <include layout="@layout/add_entry_date_motion_normal"/>
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/edit_entry_description_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="textCapSentences"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/edit_entry_category_rg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_entry_date_motion_container"
+        android:layout_marginBottom="328dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/edit_entry_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_anchor="@id/pager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_entry_description_et"
+        app:srcCompat="@drawable/ic_save_white_24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

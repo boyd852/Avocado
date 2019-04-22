@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <Transition
+        app:constraintSetStart="@+id/start"
+        app:constraintSetEnd="@+id/end"
+        app:duration="400"
+        app:motionInterpolator="easeInOut"
+        >
+    </Transition>
+    <ConstraintSet
+        android:id="@+id/start">
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/transport_category_fab"
+            app:layout_constraintCircle="@id/add_entry_fab"
+            app:layout_constraintCircleAngle="270"
+            app:layout_constraintCircleRadius="60dp"/>
+        <Constraint
+            android:id="@id/food_category_fab"
+            app:layout_constraintCircle="@id/add_entry_fab"
+            app:layout_constraintCircleAngle="315"
+            app:layout_constraintCircleRadius="60dp"/>
+        <Constraint
+            android:id="@id/attraction_category_fab"
+            app:layout_constraintCircle="@id/add_entry_fab"
+            app:layout_constraintCircleAngle="0"
+            app:layout_constraintCircleRadius="60dp"/>
+        <Constraint
+            android:id="@id/accom_category_fab"
+            app:layout_constraintCircle="@id/add_entry_fab"
+            app:layout_constraintCircleAngle="45"
+            app:layout_constraintCircleRadius="60dp"/>
+        <Constraint
+            android:id="@id/misc_category_fab"
+            app:layout_constraintCircle="@id/add_entry_fab"
+            app:layout_constraintCircleAngle="90"
+            app:layout_constraintCircleRadius="60dp"/>
+        <Constraint
+        android:id="@id/add_entry_fab"
+            android:rotation="45"/>
+    </ConstraintSet>
+</MotionScene>

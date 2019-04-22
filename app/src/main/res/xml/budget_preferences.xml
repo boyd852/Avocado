@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="pref_name"
+        android:title="Budget name"
+        android:defaultValue="No name set"/>
+
+    <EditTextPreference
+        android:key="pref_currency"
+        android:title="Home currency"
+        android:defaultValue="AUD"/>
+
+    <EditTextPreference
+        android:key="pref_daily_budget"
+        android:title="Daily budget"
+        android:defaultValue="100"/>
+</PreferenceScreen>
